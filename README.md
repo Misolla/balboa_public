@@ -72,3 +72,8 @@ We use [tinyply](https://github.com/ddiakopoulos/tinyply) for parsing PLY files.
 We use [glfw](https://www.glfw.org/) and [glad](https://glad.dav1d.de/) for the OpenGL homeworks.
 
 3D models and textures: [Stanford 3D Scanning Repository](https://graphics.stanford.edu/data/3Dscanrep/), [KickAir_8p](https://blenderartists.org/t/uv-unwrapped-stanford-bunny-happy-spring-equinox/1101297), and [Texturemontage](http://kunzhou.net/tex-models.htm).
+
+# Report
+
+HW 1_5
+I attempt to use blender and generate the ghost.json and ghost.ply, but it didn't work due to unable to save .ply files with color. I then draw an apple stored in apple.json using chat gpt help and projected that. All of the mentioned files are in scenes/hw2/. The result img is saved at outputs folder.

@@ -191,6 +191,11 @@ inline TVector2<T> normalize(const TVector2<T> &v0) {
 }
 
 template <typename T>
+inline T cross(const TVector2<T> &v0, const TVector2<T> &v1) {
+    return v0[0] * v1[1] - v0[1] * v1[0]; 
+}
+
+template <typename T>
 inline TVector3<T> operator+(const TVector3<T> &v0, const TVector3<T> &v1) {
     return TVector3<T>(v0.x + v1.x, v0.y + v1.y, v0.z + v1.z);
 }
