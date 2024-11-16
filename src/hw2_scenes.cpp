@@ -248,7 +248,6 @@ Matrix4x4 parse_transformation(const json &node) {
                 Real(0), Real(0), scale.z, Real(0),
                 Real(0), Real(0), Real(0), Real(1)
             };
-            // F = F * m;
             F = m * F;
         } else if (auto rotate_it = it->find("rotate"); rotate_it != it->end()) {
             Real angle = (*rotate_it)[0];
@@ -263,7 +262,6 @@ Matrix4x4 parse_transformation(const json &node) {
                 axis.x * axis.z * ( 1 - cos(angle_rad)) - axis.y * sin(angle_rad), axis.y * axis.z * ( 1 - cos(angle_rad)) + axis.x * sin(angle_rad), axis.z * axis.z + ( 1 - axis.z * axis.z ) * cos(angle_rad), Real(0),
                 Real(0), Real(0), Real(0), Real(1)
             };
-            // F = m * F;
             F = m * F;
         } else if (auto translate_it = it->find("translate"); translate_it != it->end()) {
             Vector3 translate = Vector3{
@@ -277,7 +275,6 @@ Matrix4x4 parse_transformation(const json &node) {
                 Real(0), Real(0), Real(0), Real(1)
             };
             F = m * F;
-            // F = m * F;
         } else if (auto lookat_it = it->find("lookat"); lookat_it != it->end()) {
             Vector3 position{0, 0, 0};
             Vector3 target{0, 0, -1};
@@ -311,7 +308,7 @@ Matrix4x4 parse_transformation(const json &node) {
                 r.z, u_new.z, -d.z, position.z,
                 Real(0), Real(0), Real(0), Real(1)
             };
-            F = L * F  ;
+            F = L * F;
         }
     }
     return F;
